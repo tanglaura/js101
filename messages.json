@@ -1,0 +1,35 @@
+{
+  "en": {
+      "welcomeMessage": "Welcome to Calculator!",
+      "chooseLanguage": "Choose your language.\n1) English 2) Spanish 3) Malay",
+      "invalidOperationLanguage": "Must choose 1, 2, or 3",
+      "enterFirstNumber": "What's the first number?",
+      "invalidNumber": "Hmm... that doesn't look like a valid number.",
+      "enterSecondNumber": "What's the second number?",
+      "chooseOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+      "invalidOperation": "Must choose 1, 2, 3, or 4",
+      "resultMessage": "The result is: ",
+      "anotherOperation": "Would you like to perform another operation? (y/n)"
+  },
+  "es": {
+    "welcomeMessage": "¡Bienvenido a Calculadora!",
+    "enterFirstNumber": "¿Cuál es el primer número?",
+    "invalidNumber": "Hmm... ese no parece un número válido.",
+    "enterSecondNumber": "¿Cuál es el segundo número?",
+    "chooseOperation": "¿Qué operación te gustaría realizar?\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+    "invalidOperation": "Debes elegir 1, 2, 3 o 4",
+    "resultMessage": "El resultado es: ",
+    "anotherOperation": "¿Le gustaría realizar otra operación? (y/n)"
+  }, 
+
+  "ms": {
+    "welcomeMessage": "Selamat datang ke Kalkulator!",
+    "enterFirstNumber": "Apakah nombor pertama?",
+    "invalidNumber": "Hmm... nampak tak nombor yang sah.",
+    "enterSecondNumber": "Apakah nombor kedua?",
+    "chooseOperation": "Apakah operasi yang ingin anda lakukan?\n1) Tambah 2) Tolak 3) Darab 4) Bahagi",
+    "invalidOperation": "Mesti pilih 1, 2, 3, atau 4",
+    "resultMessage": "Hasilnya ialah: ",
+    "anotherOperation": "Adakah anda ingin melakukan operasi lain? (y/n)"
+  }
+}
