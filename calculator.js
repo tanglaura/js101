@@ -1,37 +1,65 @@
 const readline = require('readline-sync');
+const MESSAGES = require('./messages.json');
+let defaultLanguage = 'en';
 
-function prompt(message) {
-  console.log(`=> ${message}`);
+function messageLanguage(message, lang) {
+  return MESSAGES[lang][message];
+}
+
+function prompt(messageKey, output = '') {
+  let messageLangKey = messageLanguage(messageKey, defaultLanguage);
+  console.log(`=> ${messageLangKey}${output}`);
 }
 
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
 
-prompt('Welcome to Calculator!');
+prompt('welcomeMessage');
+prompt('chooseLanguage');
+let languageChoiceEntry = readline.question();
+while (invalidNumber(languageChoiceEntry)) {
+  prompt('invalidNumber');
+  languageChoiceEntry = readline.question();
+}
+while (!['1', '2', '3'].includes(languageChoiceEntry)) {
+  prompt('invalidOperation');
+  languageChoiceEntry = readline.question();
+}
+switch (languageChoiceEntry) {
+  case '1':
+    defaultLanguage = 'en';
+    break;
+  case '2':
+    defaultLanguage = 'es';
+    break;
+  case '3':
+    defaultLanguage = 'ms';
+    break;
+}
 
 while (true) {
-  prompt("What's the first number?");
+  prompt('enterFirstNumber');
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt('invalidNumber');
     number1 = readline.question();
   }
 
-  prompt("What's the second number?");
+  prompt('enterSecondNumber');
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt('invalidNumber');
     number2 = readline.question();
   }
 
-  prompt('What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide');
+  prompt('chooseOperation');
   let operation = readline.question();
 
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt('Must choose 1, 2, 3 or 4')
+    prompt('invalidOperation');
     operation = readline.question();
   }
 
@@ -51,8 +79,8 @@ while (true) {
       break;
   }
 
-  prompt(`The result is: ${output}`);
-  prompt('Would you like to perform another operation? (y/n)');
+  prompt('resultMessage', `${output}`);
+  prompt('anotherOperation');
   let answer = readline.question();
 
   if (answer !== 'y') break;
